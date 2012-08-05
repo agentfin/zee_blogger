@@ -1,5 +1,13 @@
-<h1><%= @article.title %></h1>
-	<p><%= @article.body %></p>
+<h1><%= provide(:title, @article.title) %></h1>
+	<h1>
+		<div class="center hero-unit"><%= @article.title %>
+		</div>
+	</h1>
+	
+	<h2><%= @article.body %></h2>
+	
+	<br />
+	<br />
 	
 	<%= render :partial => 'comment_form' %>
 	

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ZeeBlogger</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<p class="flash"><%= flash[:message] %></p>
-
-<%= yield %>
-
-</body>
+	<head>
+  		<title><%= full_title(yield(:title)) %></title>
+  		<%= stylesheet_link_tag    "application", :media => "all" %>
+  		<%= javascript_include_tag "application" %>
+  		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<p class="flash"><%= flash[:message] %></p>
+		<div class="container">
+			<%= yield %>
+			<%= render 'layouts/footer' %>
+		</div>
+	</body>
 </html>
