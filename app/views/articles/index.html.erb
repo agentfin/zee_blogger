@@ -6,13 +6,17 @@
 		<% @articles.each do |article| %>
 			<li>
 				<%= link_to article.title, article_path(article), :class => 'article_title', :id => "article_#{article.id}" %>
+				<li>
+					<%= article.tag_list %>
+				</li>
 			</li>
 		<% end %>
+
 	</ul>
 	</h2>
 	<ul>
 		<%= link_to "New Article", new_article_path, :class => "new_article" %>
 	</ul>
 	
-	<%= link_to image_tag("AmIWearingPants_web.jpg", alt: "PANTS!!!"), "http://www.buzzfeed.com/sly/am-i-wearing-pants" %>
+	<%= image_tag("AmIWearingPants_web.jpg", alt: "PANTS!!!") %>
 	
